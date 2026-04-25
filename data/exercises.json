@@ -1,0 +1,184 @@
+{
+  "exercises": [
+    {
+      "id": "push_001",
+      "name": "Push-ups",
+      "category": "push",
+      "level": ["beginner", "intermediate"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["chest", "triceps", "shoulders"],
+      "sets": 3,
+      "reps": "8-12"
+    },
+    {
+      "id": "push_002",
+      "name": "Diamond Push-ups",
+      "category": "push",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["triceps", "chest"],
+      "sets": 3,
+      "reps": "6-10"
+    },
+    {
+      "id": "push_003",
+      "name": "Pike Push-ups",
+      "category": "push",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["shoulders", "triceps"],
+      "sets": 3,
+      "reps": "8-12"
+    },
+    {
+      "id": "push_004",
+      "name": "Dips",
+      "category": "push",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["chest", "triceps", "shoulders"],
+      "sets": 3,
+      "reps": "6-10"
+    },
+    {
+      "id": "pull_001",
+      "name": "Australian Pull-ups",
+      "category": "pull",
+      "level": ["beginner"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["back", "biceps"],
+      "sets": 3,
+      "reps": "8-12"
+    },
+    {
+      "id": "pull_002",
+      "name": "Pull-ups",
+      "category": "pull",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["back", "biceps"],
+      "sets": 3,
+      "reps": "5-10"
+    },
+    {
+      "id": "pull_003",
+      "name": "Chin-ups",
+      "category": "pull",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["back", "biceps"],
+      "sets": 3,
+      "reps": "5-10"
+    },
+    {
+      "id": "pull_004",
+      "name": "Bodyweight Rows",
+      "category": "pull",
+      "level": ["beginner", "intermediate"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["back", "biceps"],
+      "sets": 3,
+      "reps": "10-15"
+    },
+    {
+      "id": "legs_001",
+      "name": "Squats",
+      "category": "legs",
+      "level": ["beginner", "intermediate"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["quads", "glutes"],
+      "sets": 3,
+      "reps": "12-20"
+    },
+    {
+      "id": "legs_002",
+      "name": "Bulgarian Split Squats",
+      "category": "legs",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["quads", "glutes"],
+      "sets": 3,
+      "reps": "8-12 each leg"
+    },
+    {
+      "id": "legs_003",
+      "name": "Lunges",
+      "category": "legs",
+      "level": ["beginner", "intermediate"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["quads", "glutes"],
+      "sets": 3,
+      "reps": "10-15 each leg"
+    },
+    {
+      "id": "legs_004",
+      "name": "Pistol Squats",
+      "category": "legs",
+      "level": ["advanced"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["quads", "glutes"],
+      "sets": 3,
+      "reps": "5-8 each leg"
+    },
+    {
+      "id": "legs_005",
+      "name": "Jump Squats",
+      "category": "legs",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["quads", "glutes"],
+      "sets": 3,
+      "reps": "10-15"
+    },
+    {
+      "id": "core_001",
+      "name": "Plank",
+      "category": "core",
+      "level": ["beginner", "intermediate"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["abs", "core"],
+      "sets": 3,
+      "reps": "30-60 seconds"
+    },
+    {
+      "id": "core_002",
+      "name": "Hanging Knee Raises",
+      "category": "core",
+      "level": ["intermediate", "advanced"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["abs", "core"],
+      "sets": 3,
+      "reps": "10-15"
+    },
+    {
+      "id": "core_003",
+      "name": "L-sit Hold",
+      "category": "core",
+      "level": ["advanced"],
+      "equipment": ["pullup_bar", "rings", "full_setup"],
+      "muscle_groups": ["abs", "core", "hip_flexors"],
+      "sets": 3,
+      "reps": "15-30 seconds"
+    },
+    {
+      "id": "core_004",
+      "name": "Bicycle Crunches",
+      "category": "core",
+      "level": ["beginner", "intermediate"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["abs", "obliques"],
+      "sets": 3,
+      "reps": "15-20"
+    },
+    {
+      "id": "core_005",
+      "name": "Mountain Climbers",
+      "category": "core",
+      "level": ["beginner", "intermediate", "advanced"],
+      "equipment": ["bodyweight"],
+      "muscle_groups": ["abs", "core"],
+      "sets": 3,
+      "reps": "20-30"
+    }
+  ]
+}

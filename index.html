@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Calisthenics Workout Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        select:hover {
+            border-color: #667eea;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #result {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .workout-day {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .workout-day h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .exercise {
+            background: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .exercise-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .exercise-details {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Workout Generator <span class="ai-badge">AI Powered</span></h1>
+        <p class="subtitle">Let our AI create your personalized calisthenics program</p>
+
+        <form id="workoutForm">
+            <div class="form-group">
+                <label for="days">Training Days Per Week</label>
+                <select id="days" required>
+                    <option value="">Select days...</option>
+                    <option value="3">3 Days - Full Body</option>
+                    <option value="4">4 Days - Upper/Lower Split</option>
+                    <option value="5">5 Days - Push/Pull/Legs</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="level">Your Fitness Level</label>
+                <select id="level" required>
+                    <option value="">Select level...</option>
+                    <option value="beginner">Beginner - Just Starting Out</option>
+                    <option value="intermediate">Intermediate - Some Experience</option>
+                    <option value="advanced">Advanced - Experienced Athlete</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="equipment">Available Equipment</label>
+                <select id="equipment" required>
+                    <option value="">Select equipment...</option>
+                    <option value="bodyweight">Bodyweight Only</option>
+                    <option value="pullup_bar">Pull-up Bar</option>
+                    <option value="rings">Gymnastic Rings</option>
+                    <option value="full_setup">Full Calisthenics Setup</option>
+                </select>
+            </div>
+
+            <button type="submit">✨ Generate My AI Workout Plan</button>
+        </form>
+
+        <div id="loading" class="loading" style="display: none;">
+            🤖 AI is analyzing your profile and generating optimal workout...
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('workoutForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const days = parseInt(document.getElementById('days').value);
+            const level = document.getElementById('level').value;
+            const equipment = document.getElementById('equipment').value;
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+
+            // Simulate AI processing delay
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ days, level, equipment })
+                });
+
+                const workout = await response.json();
+                displayWorkout(workout);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = 
+                    '<p style="color: red;">Error generating workout. Please try again.</p>';
+                document.getElementById('result').style.display = 'block';
+            }
+
+            document.getElementById('loading').style.display = 'none';
+        });
+
+        function displayWorkout(workout) {
+            const resultDiv = document.getElementById('result');
+            let html = '<h2 style="color: #667eea; margin-bottom: 20px;">Your Personalized Workout Plan</h2>';
+
+            workout.workouts.forEach(day => {
+                html += `
+                    <div class="workout-day">
+                        <h3>Day ${day.day}: ${day.name}</h3>
+                `;
+
+                day.exercises.forEach(exercise => {
+                    html += `
+                        <div class="exercise">
+                            <span class="exercise-name">${exercise.name}</span>
+                            <span class="exercise-details">${exercise.sets} sets × ${exercise.reps}</span>
+                        </div>
+                    `;
+                });
+
+                html += '</div>';
+            });
+
+            resultDiv.innerHTML = html;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
